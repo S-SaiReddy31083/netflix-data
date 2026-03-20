@@ -1,123 +1,99 @@
-# Netflix Data Analysis 🎬📊
+# Netflix Data Analysis and Type Prediction
 
-This project performs **Exploratory Data Analysis (EDA)** on the Netflix dataset using Python.
-The goal is to understand the dataset structure, handle missing values, and visualize content distribution.
+This project explores the Netflix titles dataset using **Pandas, NumPy, Matplotlib, and Seaborn** for data analysis and visualization, and uses **Scikit-learn** to build a machine learning model that predicts whether a title is a **Movie** or a **TV Show**.
 
----
+## Project Overview
 
-## 📌 Project Overview
+The project is divided into two main parts:
 
-The Netflix dataset contains information about movies and TV shows available on Netflix, including:
+1. **Exploratory Data Analysis (EDA)**
+   - Understanding the structure of the dataset
+   - Checking missing values and duplicates
+   - Exploring content distribution, release trends, and other patterns
+   - Visualizing insights using Matplotlib and Seaborn
 
-* Title
-* Type (Movie/TV Show)
-* Cast
-* Country
-* Release Year
-* Rating
-* Duration
+2. **Machine Learning**
+   - Preprocessing selected features
+   - Encoding categorical variables
+   - Training a classification model using Scikit-learn
+   - Predicting whether a Netflix title is a Movie or TV Show
+   - Evaluating model performance using accuracy, classification report, and confusion matrix
 
----
+## Dataset
 
-## 🛠 Technologies Used
+The dataset used in this project is the **Netflix Titles Dataset**, which contains information about Netflix content such as:
+- Title
+- Type
+- Director
+- Cast
+- Country
+- Release year
+- Rating
+- Duration
+- Genre
+- Description
 
-* Python 🐍
-* Pandas
-* NumPy
-* Matplotlib
-* Seaborn
+## Technologies Used
 
----
+- **Python**
+- **Pandas**
+- **NumPy**
+- **Matplotlib**
+- **Seaborn**
+- **Scikit-learn**
 
-## 📂 Dataset
+## Workflow
 
-Dataset used: **Netflix Titles Dataset**
+### 1. Data Loading
+The dataset is loaded using Pandas and inspected using:
+- `head()`
+- `info()`
+- `describe()`
+- `shape`
 
-Make sure the dataset is placed correctly:
+### 2. Data Cleaning
+The project includes:
+- Checking missing values
+- Filling missing values in columns like `country`, `rating`, and `duration`
+- Checking duplicates
+- Preparing columns for analysis
 
-```bash
-netflix/
-└── netflix_titles.csv
-```
+### 3. Exploratory Data Analysis
+EDA questions explored include:
+- What is the distribution of Movies and TV Shows?
+- Which years have the highest number of releases?
+- What are the most common ratings?
+- Which countries contribute the most content?
+- What patterns can be observed in Netflix titles?
 
----
+### 4. Feature Engineering
+To prepare data for machine learning:
+- Useful columns were selected
+- The numeric part of the `duration` column was extracted
+- Categorical columns were encoded using `LabelEncoder`
 
-## 🔎 Steps Performed
+### 5. Machine Learning Model
+A **Logistic Regression** model was used to predict the `type` column:
+- `Movie`
+- `TV Show`
 
-1. Loaded dataset using **Pandas**
-2. Displayed dataset structure using `info()`
-3. Viewed first few rows using `head()`
-4. Generated statistical summary using `describe()`
-5. Checked missing values
-6. Checked duplicate records
-7. Filled missing values with `0`
-8. Checked dataset shape
-9. Created visualization using Seaborn
+#### Features used:
+- `release_year`
+- `rating`
+- `duration_num`
+- `country`
 
----
+### 6. Model Evaluation
+The model was evaluated using:
+- Accuracy score
+- Classification report
+- Confusion matrix
 
-## 📊 Visualization
-
-### Distribution of Movies vs TV Shows
-
-A count plot is used to show the number of:
-
-* 🎬 Movies
-* 📺 TV Shows
-
-```python
-sns.countplot(x="type", data=df)
-```
-
----
-
-## ▶️ How to Run the Project
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/S-SaiReddy31083/netflix-data.git
-```
-
-2. Navigate to the project folder:
-
-```bash
-cd netflix-data
-```
-
-3. Install required libraries:
-
-```bash
-pip install pandas numpy matplotlib seaborn
-```
-
-4. Run the Python script:
+## Project Structure
 
 ```bash
-python netflixx.py
-```
-
----
-
-## 📈 Output
-
-The program will display:
-
-* Dataset information
-* Missing values summary
-* Duplicate count
-* Dataset shape
-* Graph showing distribution of Movies and TV Shows
-
----
-
-## 👨‍💻 Author
-
-**Sai Reddy**
-
-GitHub:
-https://github.com/S-SaiReddy31083
-
----
-
-⭐ If you found this project useful, consider giving it a star!
+netflix-data/
+│
+├── netflix_titles.csv
+├── netflixx.py
+└── README.md
