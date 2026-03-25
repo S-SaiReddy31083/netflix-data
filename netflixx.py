@@ -75,8 +75,8 @@ print("Confusion Matrix: ",confusion_matrix(y, y_pred))
 #Graph representation of the confusion matrix using the seaborn library
 sns.heatmap(confusion_matrix(y, y_pred), annot=True, fmt='d')
 plt.title("Confusion Matrix")
-plt.xlabel("Predicted Data")
-plt.ylabel("Actual Data")
+plt.xlabel("Predicted Values")
+plt.ylabel("Actual Values")
 plt.show()
 
 #Checking in the Line plot the relationship between country and rating
